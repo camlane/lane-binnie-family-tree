@@ -23,6 +23,7 @@
             "gender": "M",
             "yob": "1854",
             "yod": "1927",
+            "born": "Windsor, New South Wales, Australia",
             "links": [
               "https://www.geni.com/people/Reverend-Benjamin-Lane/6000000038278849907",
               "https://www.wikitree.com/wiki/Lane-9646"
@@ -35,7 +36,7 @@
                 "gender": "M",
                 "yob": "1830",
                 "yod": "1913",
-                "resided": "Windsor, New South Wales, Australia",
+                "born": "Sydney, Australia",
                 "links": [
                   "https://grthom.info/johnlane"
                 ]
@@ -47,10 +48,10 @@
                     "gender": "M",
                     "yob": "1796",
                     "yod": "1863",
-                    "born": "Herefordshire, England",
+                    "born": "Goodrich, Herefordshire, England",
                     "resided": "Windsor, New South Wales",
-                    "transportedAs": "Settler",
-                    "transportedOn": "England (1826)",
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "England (1826)",
                     "links": [
                       "https://grthom.info/wslane"
                     ]
@@ -258,10 +259,11 @@
                     "yob": "1800",
                     "yod": "1847",
                     "born": "Dublin, Ireland",
-                    "transportedAs": "Settler",
-                    "transportedOn": "England (1826)",
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "England (1826)",
                     "links": [
-                      "https://grthom.info/wslane"
+                      "https://grthom.info/wslane",
+                      "https://www.wikitree.com/wiki/Boyd-8768"
                     ]
                   },
                   "children": [
@@ -269,7 +271,8 @@
                       "name": "Thomas Boyd",
                       "attributes": {
                         "gender": "M",
-                        "yob": "1775"
+                        "yob": "1775",
+                        "born": "Kingston, Galway, Ireland"
                       }
                     }
                   ]
@@ -282,7 +285,7 @@
                 "gender": "F",
                 "yob": "1833",
                 "yod": "1904",
-                "resided": "Windsor, New South Wales, Australia",
+                "born": "Seven Hills, New South Wales, Australia",
                 "links": [
                   "https://www.wikitree.com/wiki/Anderson-32837"
                 ]
@@ -296,8 +299,8 @@
                     "yod": "1873",
                     "born": "Liverpool, England",
                     "resided": "Lane Cove, New South Wales, Australia",
-                    "transportedAs": "Convict",
-                    "transportedOn": "Alexander (1806)",
+                    "arrivedAs": "Convict",
+                    "arrivedOn": "Alexander (1806)",
                     "links": [
                       "https://www.wikitree.com/wiki/Anderson-32840"
                     ]
@@ -312,8 +315,8 @@
                         "born": "North Stoke, Oxfordshire, England",
                         "resided": "Sydney, New South Wales, Australia",
                         "occupation": "Carpenter/Schoolteacher",
-                        "transportedAs": "Convict",
-                        "transportedOn": "Alexander (1806)",
+                        "arrivedAs": "Convict",
+                        "arrivedOn": "Alexander (1806)",
                         "links": [
                           "https://grthom.info/anderson",
                           "https://www.wikitree.com/wiki/Anderson-32841",
@@ -343,8 +346,8 @@
                         "gender": "F",
                         "yob": "1785",
                         "born": "Oxfordshire, England",
-                        "transportedAs": "Convicts wife",
-                        "transportedOn": "Alexander (1806)"
+                        "arrivedAs": "Convicts wife",
+                        "arrivedOn": "Alexander (1806)"
                       }
                     }
                   ]
@@ -355,7 +358,7 @@
                     "gender": "F",
                     "yob": "1813",
                     "yod": "1904",
-                    "resided": "Sydney, New South Wales, Australia",
+                    "born": "Sydney, New South Wales, Australia",
                     "links": [
                       "https://www.wikitree.com/wiki/Manning-4601"
                     ]
@@ -368,8 +371,8 @@
                         "yob": "1768",
                         "yod": "1850",
                         "born": "Whitechapel, England",
-                        "transportedAs": "Convict",
-                        "transportedOn": "Royal Admiral (1800)",
+                        "arrivedAs": "Convict",
+                        "arrivedOn": "Royal Admiral (1800)",
                         "links": [
                           "https://grthom.info/manning/"
                         ]
@@ -398,8 +401,8 @@
                         "yob": "1773",
                         "yod": "1849",
                         "born": "Cardiff, Wales",
-                        "transportedAs": "Convict",
-                        "transportedOn": "The Nile (1801)",
+                        "arrivedAs": "Convict",
+                        "arrivedOn": "The Nile (1801)",
                         "links": [
                           "https://grthom.info/manning/"
                         ]
@@ -433,6 +436,7 @@
             "gender": "F",
             "yob": "1862",
             "yod": "1943",
+            "born": "Australia",
             "links": [
               "https://www.wikitree.com/wiki/Lesterin-1"
             ]
@@ -471,8 +475,8 @@
                 "gender": "M",
                 "yob": "1861",
                 "born": "Tradeston, Lanarkshire, Scotland",
-                "transportedAs": "Settler",
-                "transportedOn": "Chile (1878)",
+                "arrivedAs": "Settler",
+                "arrivedOn": "Chile (1878)",
                 "links": [
                   "https://www.wikitree.com/wiki/Binnie-382"
                 ]
@@ -592,8 +596,8 @@
                 "gender": "F",
                 "yob": "1863",
                 "born": "England",
-                "transportedAs": "Settler",
-                "transportedOn": "Lusitania (1884)",
+                "arrivedAs": "Settler",
+                "arrivedOn": "Lusitania (1884)",
                 "links": [
                   "https://www.wikitree.com/wiki/Livesey-346"
                 ]
@@ -646,8 +650,8 @@
                     "gender": "M",
                     "yob": "1835",
                     "born": "Surrey, England",
-                    "transportedAs": "Settler",
-                    "transportedOn": "Bleinheim (1857)",
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "Bleinheim (1857)",
                     "links": [
                       "https://www.theycametheystayed.com/p316.htm#i1309"
                     ]
@@ -1286,8 +1290,8 @@
                     "gender": "F",
                     "yob": "1833",
                     "born": "Somerset, England",
-                    "transportedAs": "Settler",
-                    "transportedOn": "Bleinheim (1857)",
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "Bleinheim (1857)",
                     "links": [
                       "https://www.wikitree.com/wiki/Elderfield-48"
                     ]
@@ -1296,13 +1300,15 @@
                     {
                       "name": "William Enderfield",
                       "attributes": {
-                        "gender": "M"
+                        "gender": "M",
+                        "born": "England"
                       }
                     },
                     {
                       "name": "Emma Purnan",
                       "attributes": {
-                        "gender": "F"
+                        "gender": "F",
+                        "born": "England"
                       },
                       "children": [
                         {
@@ -1335,8 +1341,8 @@
                     "gender": "M",
                     "yob": "1834",
                     "born": "Buckland Monachorum, Devon, England",
-                    "transportedAs": "Settler",
-                    "transportedOn": "Ascendant (1858)",
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "Ascendant (1858)",
                     "links": [
                       "https://www.theycametheystayed.com/p37.htm#i578"
                     ]
@@ -1440,8 +1446,8 @@
                                           "name": "German Goole",
                                           "attributes": {
                                             "gender": "M",
-                                            "yob": "1619",
-                                            "born": "Cornwall, England"
+                                            "yob": "1695",
+                                            "born": "St Germans, Cornwall, England"
                                           },
                                           "children": [
                                             {
@@ -1554,16 +1560,18 @@
                   "attributes": {
                     "gender": "F",
                     "yob": "1834",
+                    "yod": "1893",
                     "born": "Ruan Lanihorne, Cornwall, England",
-                    "transportedAs": "Settler",
-                    "transportedOn": "Ascendant (1858)"
+                    "arrivedAs": "Settler",
+                    "arrivedOn": "Ascendant (1858)"
                   },
                   "children": [
                     {
                       "name": "Robert Chivell",
                       "attributes": {
                         "gender": "M",
-                        "yob": "1803"
+                        "yob": "1803",
+                        "born": "St Veep, Cornwall, England"
                       },
                       "children": [
                         {
@@ -1699,7 +1707,9 @@
                       "name": "Martha Vowden",
                       "attributes": {
                         "gender": "F",
-                        "yob": "1862"
+                        "yob": "1813",
+                        "yod": "1862",
+                        "born": "Ruan Lanihorne, Cornwall, England"
                       },
                       "children": [
                         {
