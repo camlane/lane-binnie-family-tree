@@ -48,7 +48,6 @@ function getCircleClass(gender) {
 }
 
 const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
-  console.log('Creating FamilyTreeNode');
   return (
     <>
       <circle r={20} fill={getCircleClass(nodeDatum.attributes['gender'])}></circle>

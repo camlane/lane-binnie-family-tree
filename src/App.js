@@ -206,6 +206,7 @@ class App extends Component {
       translateX: 60,
       translateY: 60,
     });
+    console.log('Created App');
   }
 
   render() {
@@ -270,7 +271,6 @@ class App extends Component {
       </div>
     );
   }
-  console.log('Created App');
 }
 
 export default App;
