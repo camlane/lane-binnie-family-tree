@@ -28,14 +28,22 @@ const textLayout = {
   },
 };
 
-const flags = {
-            "England" : "https://upload.wikimedia.org/wikipedia/en/b/be/Flag_of_England.svg",
+const flagIcons = {
+            "England" : "https://upload.wikimedia.org/wikipedia/commons/b/be/Flag_of_England.svg",
             "Ireland" : "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
             "Scotland" : "https://upload.wikimedia.org/wikipedia/commons/1/10/Flag_of_Scotland.svg",
             "Wales" : "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Wales.svg",
             "Australia" : "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg"};
 
-const PureSvgNodeElement = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
+function toTitleCase(value) {
+    return value.charAt(0).toUpperCase() + value.replace(/([A-Z])/g, " $1").slice(1)
+}
+
+function getFlagUrl(attributes) {
+    return flagIcons[attributes['born']?.split(',').pop().trim()]
+}
+
+const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
   return (
     <>
       <circle r={20} fill={nodeDatum.attributes['gender'] == 'M' ? '#1F4788' : '#C93756'}></circle>
@@ -49,7 +57,7 @@ const PureSvgNodeElement = ({ nodeDatum, orientation, toggleNode, onNodeClick })
               .filter(key => !key.includes('links') && !key.includes('gender'))
               .map(([key, value], i) =>
                 <tspan key={`${key}-${i}`} {...textLayout[orientation].attribute}>
-                  {key.charAt(0).toUpperCase() + key.replace(/([A-Z])/g, " $1").slice(1)}: {value}
+                  {toTitleCase(key)}: {value}
                 </tspan>
               )
           }
@@ -61,16 +69,16 @@ const PureSvgNodeElement = ({ nodeDatum, orientation, toggleNode, onNodeClick })
               .map(value =>
                 value.map((link, index) =>
                   <tspan className="url">
-                    <a href={link} target="_blank">[link {index+1}] </a>
+                    <a href={link} target="_blank">[link {index+1}]</a><tspan>&nbsp;</tspan>
                   </tspan>
                 )
               )
           }
         </text>
-        <image height="10" width="15" href={flags[nodeDatum.attributes['born']?.split(',').pop().trim()]}></image>
+        <image height="10" width="15" href={getFlagUrl(nodeDatum.attributes)}></image>
       </g>
     </>
   );
 };
 
-export default PureSvgNodeElement;
+export default FamilyTreeNode;

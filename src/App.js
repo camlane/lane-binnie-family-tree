@@ -1,73 +1,31 @@
 import React, { Component } from 'react';
 import clone from 'clone';
 import Dag from 'react-d3-dag';
-import { version } from 'react-d3-dag/package.json';
-import Switch from './components/Switch';
-import MixedNodeElement from './components/MixedNodeElement';
-import PureSvgNodeElement from './components/PureSvgNodeElement';
-import MixedNodeInputElement from './components/MixedNodeInputElement';
+import FamilyTreeNode from './components/FamilyTreeNode';
 import './App.css';
 
-// Data examples
-import orgChartJson from './examples/org-chart.json';
-import flareJson from './examples/d3-hierarchy-flare.json';
-import reactTree from './examples/reactRepoTree';
-
-console.log('Demo React version: ', React.version);
+import familyTreeJson from './examples/family-tree.json';
 
 const customNodeFnMapping = {
   svg: {
     description: 'Default - Pure SVG node & label (IE11 compatible)',
     fn: (rd3dagProps, appState) => (
-      <PureSvgNodeElement
+      <FamilyTreeNode
         nodeDatum={rd3dagProps.nodeDatum}
         toggleNode={rd3dagProps.toggleNode}
         orientation={appState.orientation}
       />
     ),
-  },
-  mixed: {
-    description: 'MixedNodeElement - SVG `circle` + `foreignObject` label',
-    fn: ({ nodeDatum, toggleNode }, appState) => (
-      <MixedNodeElement
-        nodeData={nodeDatum}
-        triggerNodeToggle={toggleNode}
-        foreignObjectProps={{
-          width: appState.nodeSize.x,
-          height: appState.nodeSize.y,
-          x: -50,
-          y: 50,
-        }}
-      />
-    ),
-  },
-  input: {
-    description: 'MixedNodeElement - Interactive nodes with inputs',
-    fn: ({ nodeDatum, toggleNode }, appState) => (
-      <MixedNodeInputElement
-        nodeData={nodeDatum}
-        triggerNodeToggle={toggleNode}
-        foreignObjectProps={{
-          width: appState.nodeSize.x,
-          height: appState.nodeSize.y,
-          x: -50,
-          y: 50,
-        }}
-      />
-    ),
-  },
+  }
 };
 
 const countNodes = (count = 0, n) => {
-  // Count the current node
   count += 1;
 
-  // Base case: reached a leaf node.
   if (!n.children) {
     return count;
   }
 
-  // Keep traversing children while updating `count` until we reach the base case.
   return n.children.reduce((sum, child) => countNodes(sum, child), count);
 };
 
@@ -78,10 +36,10 @@ class App extends Component {
     this.addedNodesCount = 0;
 
     this.state = {
-      data: orgChartJson,
-      totalNodeCount: countNodes(0, Array.isArray(orgChartJson) ? orgChartJson[0] : orgChartJson),
+      data: familyTreeJson,
+      totalNodeCount: countNodes(0, Array.isArray(familyTreeJson) ? familyTreeJson[0] : familyTreeJson),
       orientation: 'vertical',
-      pathFunc: 'straight',//
+      pathFunc: 'straight',
       translateX: 60,
       translateY: 60,
       collapsible: true,
