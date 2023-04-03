@@ -47,7 +47,6 @@ function getCircleClass(gender) {
     return gender == 'M' ? '#1F4788' : '#C93756'
 }
 
-
 const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
   return (
     <>
