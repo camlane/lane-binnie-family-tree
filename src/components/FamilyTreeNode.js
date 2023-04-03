@@ -43,10 +43,15 @@ function getFlagUrl(attributes) {
     return flagIcons[attributes['born']?.split(',').pop().trim()]
 }
 
+function getCircleClass(gender) {
+    return gender == 'M' ? '#1F4788' : '#C93756'
+}
+
+
 const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
   return (
     <>
-      <circle r={20} fill={nodeDatum.attributes['gender'] == 'M' ? '#1F4788' : '#C93756'}></circle>
+      <circle r={20} fill={getCircleClass(nodeDatum.attributes['gender'])}></circle>
       <g className="rd3dag-label">
         <text className="rd3dag-label__title fi fi-gr" {...textLayout[orientation].title}>
           {nodeDatum.name}
