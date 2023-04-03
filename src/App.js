@@ -270,6 +270,7 @@ class App extends Component {
       </div>
     );
   }
+  console.log('Created App');
 }
 
 export default App;
