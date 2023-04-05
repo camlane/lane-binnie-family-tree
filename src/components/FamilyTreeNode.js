@@ -35,6 +35,8 @@ const flagIcons = {
     "Wales" : "https://upload.wikimedia.org/wikipedia/commons/d/dc/Flag_of_Wales.svg",
     "Australia" : "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Australia.svg"};
 
+const ignoredAttributes = ["links", "gender"];
+
 function toTitleCase(value) {
     return value.charAt(0).toUpperCase() + value.replace(/([A-Z])/g, " $1").slice(1)
 }
@@ -47,35 +49,55 @@ function getCircleClass(gender) {
     return gender == 'M' ? '#1F4788' : '#C93756'
 }
 
-const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
-  return (
-    <>
-      <circle r={20} fill={getCircleClass(nodeDatum.attributes['gender'])}></circle>
-      <g className="rd3dag-label">
-        <text className="rd3dag-label__title fi fi-gr" {...textLayout[orientation].title}>
-          {nodeDatum.name}
-        </text>
-        <text className="rd3dag-label__attributes" {...textLayout[orientation].attributes}>
-          {Object.entries(nodeDatum.attributes)
-            .filter(key => !key.includes('links') && !key.includes('gender'))
-            .map(([key, value], i) =>
-              <tspan key={`${key}-${i}`} {...textLayout[orientation].attribute}>
-                {toTitleCase(key)}: {value}
-              </tspan>
-            )
-          }
-          <tspan {...textLayout[orientation].attribute}>&nbsp;</tspan>
+const FlagImage = ({ href }) => {
+    return (
+        <image height="10" width="15" href={href}></image>
+    );
+};
 
-          {nodeDatum.attributes['links'] &&
-            nodeDatum.attributes['links'].map((link, index) =>
-              <tspan className="url">
-                <a href={link} target="_blank" rel="noopener noreferrer">[link {index+1}]</a><tspan>&nbsp;</tspan>
-              </tspan>
-            )
-          }
-        </text>
-        <image height="10" width="15" href={getFlagUrl(nodeDatum.attributes)}></image>
-      </g>
+const NodeUrl = ({ index, url }) => {
+    return (
+        <tspan>
+            <a href={url} target="_blank" rel="noopener noreferrer">[link {index + 1}]</a><tspan>&nbsp;</tspan>
+        </tspan>
+    );
+};
+
+const AttributeText = ({ key, value, index }) => {
+    return (
+        <tspan key={`${key}-${index}`}>
+            {toTitleCase(key)}: {value}
+        </tspan>
+    );
+};
+
+const FamilyTreeNode = ({ nodeDatum, orientation, toggleNode, onNodeClick }) => {
+    return (
+    <>
+        <circle r={20} fill={getCircleClass(nodeDatum.attributes['gender'])}></circle>
+        <g>
+            <text className="rd3dag-label__title" {...textLayout[orientation].title}>
+                {nodeDatum.name}
+            </text>
+            <text className="rd3dag-label__attributes">
+                {Object.entries(nodeDatum.attributes)
+                    .filter(key => !key.includes('links') && !key.includes('gender'))
+                    .map(([key, value], i) =>
+                        <tspan key={`${key}-${i}`} {...textLayout[orientation].attribute}>
+                            {toTitleCase(key)}: {value}
+                        </tspan>
+                        )
+                }
+                <tspan {...textLayout[orientation].attribute}>&nbsp;</tspan>
+
+                {nodeDatum.attributes['links'] &&
+                    nodeDatum.attributes['links'].map((link, index) =>
+                        <NodeUrl index={index + 1} url={link} />
+                    )
+                }
+            </text>
+            <FlagImage href={getFlagUrl(nodeDatum.attributes)}/>
+        </g>
     </>
   );
 };
